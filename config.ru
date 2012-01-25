@@ -6,7 +6,7 @@ Refraction.configure do |req|
   case req.host
   when 'builders.railsbridge.org'
     req.permanent! 'http://railsbridge.org'
-  when 'www.railsbridge.org'
+  when /(www.)?railsbridge.(org|com)/
     req.permanent! :host => 'railsbridge.org'
   end
 end

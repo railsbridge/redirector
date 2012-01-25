@@ -1,5 +1,16 @@
 utility site that redirects defunct domains or subdomains to real railsbridge sites
 
+To add or change a redirect:
+
+ * edit config.ru
+ * edit app_test.rb to add some tests for your new redirect
+ * run "ruby app_test.rb" to run some unit tests and make sure you didn't break anything
+ * run "heroku domains:add newdomain.railsbridge.org" if necessary
+ * git add .; git push; git push heroku to deploy
+
+The heroku app is named railsbridge-redirector.heroku.com and is currently owned by alex@stinky.com
+
+
 ---
 
 builders.railsbridge.org - defunct, redirects to http://railsbridge.org

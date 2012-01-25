@@ -25,6 +25,14 @@ class Test
     assert { last_response.status == 301 }
     assert("saves the path when redirecting from www.railsbridge.org") { last_response['Location'] == "http://railsbridge.org/foo" }
 
+    get "/foo", {}, "HTTP_HOST" => "www.railsbridge.com"
+    assert { last_response.status == 301 }
+    assert("saves the path when redirecting from www.railsbridge.com") { last_response['Location'] == "http://railsbridge.org/foo" }
+
+    get "/foo", {}, "HTTP_HOST" => "railsbridge.com"
+    assert { last_response.status == 301 }
+    assert("saves the path when redirecting from railsbridge.com") { last_response['Location'] == "http://railsbridge.org/foo" }
+
     get "/foo", {}, "HTTP_HOST" => "builders.railsbridge.org"
     assert { last_response.status == 301 }
     assert("doesn't save the path when redirecting from builders.railsbridge.org") { last_response['Location'] == "http://railsbridge.org" }
