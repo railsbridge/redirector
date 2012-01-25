@@ -1,0 +1,26 @@
+utility site that redirects defunct domains or subdomains to real railsbridge sites
+
+---
+
+builders.railsbridge.org - defunct, redirects to http://railsbridge.org
+
+www.railsbridge.org/* - redirects to http://railsbridge.org/*
+
+---
+
+Notes:
+
+workshops.railsbridge.org is running a wordpress site on dreamhost. There are several bogus links in the page header:
+
+ -- Courseware points to railstutor.org which has been camped
+ -- Builders points to builders.railsbridge.org which is defunct
+ -- Mentors points to railsmentors.org which is run by Brian Hogan and has Railsbridge branding in the footer ("© 2009-2011 Rails Mentors, a part of RailsBridge sponsored by New Auburn Personal Computer Services LLC")
+ -- Teaching Kids points to http://teachingkids.railsbridge.org/ which is live but old
+ -- Ruby Challenge points to http://rubychallenge.com/ which is not active and is owned by a private registrant
+
+summary/proposal:
+* I'll put in a 301 redirect for builders.railsbridge.org since that's the only domain I control (it's a subdomain)
+* I'll also 301 www.railsbridge.org/* to railsbridge.org/*
+* someone needs to remove Courseware, Builders, Mentors, and also probably Ruby Challenge links from the header of the wordpress site
+
+
