@@ -40,3 +40,4 @@ class Test
   end
 end
 Test.new.go
+puts "Success!"
